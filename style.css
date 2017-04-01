@@ -65,3 +65,44 @@ label {
   height: 200px;
   float: left;
 }
+
+.div-block {
+  width: 100px;
+  height: 100px;
+}
+
+.originalcolor {
+  width: 100px;
+  height: 100px;
+  margin-right: 3px;
+  margin-left: 7px;
+  padding-right: 2px;
+  float: left;
+}
+
+.original1 {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.original2 {
+  width: 100px;
+  height: 100px;
+  margin-left: 7px;
+  float: left;
+}
+
+.div-block-2 {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.original3 {
+  width: 100px;
+  height: 100px;
+  margin-left: 7px;
+  padding-left: 0px;
+  float: left;
+}
