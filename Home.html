@@ -19,10 +19,22 @@
 		 </div>
 	 </div>
 	 <div class="new-colors" id = "new-colors">
-		 <div class="color1" id = "color_1"></div>
-		 <div class="color2" id = "color_2"></div>
-		 <div class="color3" id = "color_3"></div>
-		 <div class="color4" id = "color_4"></div>
+		 <div class="color1" id = "color_1">
+			 <div id="new-hover-content">
+			 </div>
+		 </div>
+		 <div class="color2" id = "color_2">
+			 <div id="new-hover-content2">
+			 </div>
+		 </div>
+		 <div class="color3" id = "color_3">
+			 <div id="new-hover-content3">
+			 </div>
+		 </div>
+		 <div class="color4" id = "color_4">
+			 <div id="new-hover-content4">
+			 </div>
+		 </div>
 	 </div>
 
 	<p id = "demo"> </p>
@@ -32,7 +44,7 @@
 				this.red = r;
 				this.green = g;
 				this.blue = b;
-				this.hex = rgbToHex(r, g, b);
+				this.hex = "#" + rgbToHex(r, g, b);
 			}
 			function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
 			function toHex(n) {
@@ -42,10 +54,10 @@
 				 return "0123456789ABCDEF".charAt((n-n%16)/16)
 				      + "0123456789ABCDEF".charAt(n%16);
 			}
-
 			var randColor1 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
 			var randColor2 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
 			var randColor3 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
+
 			var color1 = "#" + rgbToHex(randColor1.red, randColor1.green, randColor1.blue);
 			document.getElementById("original_1").style.background = color1;
 			document.getElementById("hover-content").innerHTML = color1;
@@ -61,7 +73,7 @@
 			document.getElementById("original_1").addEventListener("click", Color1);
 			document.getElementById("original_2").addEventListener("click", Color2);
 			document.getElementById("original_3").addEventListener("click", Color3);
-
+			var newColors = [];
 
 			function Color1()
 			{
@@ -71,7 +83,14 @@
 				{
 					generateColors(chosen, i);
 				}
-
+				document.getElementById("color_1").style.background = newColors[0].hex;
+				document.getElementById("color_2").style.background = newColors[1].hex;
+				document.getElementById("color_3").style.background = newColors[2].hex;
+				document.getElementById("color_4").style.background = newColors[3].hex;
+				document.getElementById("new-hover-content").innerHTML = newColors[0].hex;
+				document.getElementById("new-hover-content2").innerHTML = newColors[1].hex;
+				document.getElementById("new-hover-content3").innerHTML = newColors[2].hex;
+				document.getElementById("new-hover-content4").innerHTML = newColors[3].hex;
 			}
 			function Color2()
 			{
@@ -83,17 +102,15 @@
 				alert("3");
 				chosen = 2;
 			}
-			var newColors = [];
 			function generateColors(choice, k)
 			{
 				var value = (colors[choice].red + colors[choice].green + colors[choice].blue)/3;
-				var offset = Math.random() * 10;
+				var offset = Math.random() * 200;
 				var newValue = value + 	2*Math.random()*offset - offset;
 				var valueRatio = newValue/value;
 				var newColor = new color(colors[choice].red*valueRatio, colors[choice].green * valueRatio, colors[choice].blue*valueRatio);
 				newColors[k] = newColor;
 			}
-
 		</script>
 	</body>
 </html>
