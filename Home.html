@@ -6,9 +6,18 @@
 
 	<div class="w-container">
 	 <h1>Choose a color:</h1>
-	 <div class="original1" id="original_1"></div>
-	 <div class="original2" id="original_2"></div>
-	 <div class="original3" id="original_3"></div>
+	 <div class="original1" id="original_1">
+		 <div id="hover-content">
+		 </div>
+	 </div>
+	 <div class="original2" id="original_2">
+		 <div id="hover-content2">
+		 </div>
+	 </div>
+	 <div class="original3" id="original_3">
+		 <div id="hover-content3">
+		 </div>
+	 </div>
  </div>
  <div class="w-container">
 	 <div class="color1"></div>
@@ -37,7 +46,6 @@
 				      + "0123456789ABCDEF".charAt(n%16);
 			}
 
-
 			var randColor = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
 			var randColor2 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
 			var randColor3 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
@@ -45,10 +53,14 @@
 
 			var color1 = "#" + rgbToHex(randColor.red, randColor.green, randColor.blue);
 			document.getElementById("original_1").style.background = color1;
+			document.getElementById("hover-content").innerHTML = color1;
 			var color2 = "#" + rgbToHex(randColor2.red, randColor2.green, randColor2.blue);
 			document.getElementById("original_2").style.background = color2;
+			document.getElementById("hover-content2").innerHTML = color2;
 			var color3 = "#" + rgbToHex(randColor3.red, randColor3.green, randColor3.blue);
 			document.getElementById("original_3").style.background = color3;
+			document.getElementById("hover-content3").innerHTML = color3;
+
 
 		</script>
 	</body>
