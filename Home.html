@@ -147,11 +147,21 @@
 
 			function generateColors(choice, k)
 			{
+				/*
 				var value = (colors[choice].red + colors[choice].green + colors[choice].blue)/3;
 				var offset = Math.random() * 200;
 				var newValue = value + 	2*Math.random()*offset - offset;
 				var valueRatio = newValue/value;
 				var newColor = new color(colors[choice].red*valueRatio, colors[choice].green * valueRatio, colors[choice].blue*valueRatio);
+				*/
+				var r = Math.random()*256;
+				var g = Math.random()*256;
+				var b = Math.random()*256;
+				r = (r + colors[choice].red)/2;
+				g = (g + colors[choice].green)/2;
+				b = (b + colors[choice].blue)/2;
+
+				var newColor = new color(r, g, b);
 				newColors[k] = newColor;
 			}
 		</script>
