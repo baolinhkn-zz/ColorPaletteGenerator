@@ -5,6 +5,12 @@ label {
   font-weight: 700;
 }
 
+body {
+  font-family: Helvetica;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
 .labels {
   margin-top: 50px;
   padding-right: 0px;
