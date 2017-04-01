@@ -1,0 +1,67 @@
+label {
+  display: block;
+  margin-bottom: 5px;
+  padding-right: 0px;
+  font-weight: 700;
+}
+
+.labels {
+  margin-top: 50px;
+  padding-right: 0px;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.generate {
+  position: static;
+  left: 0px;
+  bottom: 0px;
+  display: block;
+  margin: 50px 1px 30px 430px;
+  float: left;
+  background-color: #fff;
+  font-family: Montserrat, sans-serif;
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-field {
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  margin-left: 535px;
+  padding-top: 9px;
+  border: 1px solid #333;
+}
+
+.color {
+  width: 200px;
+}
+
+.color1 {
+  width: 25%;
+  height: 200px;
+  float: left;
+}
+
+.color2 {
+  width: 25%;
+  height: 200px;
+  float: left;
+}
+
+.color3 {
+  width: 25%;
+  height: 200px;
+  float: left;
+}
+
+.color4 {
+  width: 25%;
+  height: 200px;
+  float: left;
+}
