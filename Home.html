@@ -2,16 +2,15 @@
 	<head>
 	</head>
 
-	<body>
 	<div class="w-form">
     <form class="w-clearfix" data-name="Color Form" id="color-form" name="color-form">
-      <label class="labels" for="red">enter an r value</label>
-      <input class="text-field w-input" data-name="red" id="red" maxlength="256" name="red" type="text">
-      <label class="labels" for="green">enter a g value</label>
-      <input class="text-field w-input" data-name="Email" id="email" maxlength="256" name="green" required="required" type="text">
-      <label class="labels" for="blue">enter a b value</label>
-      <input class="text-field w-input" data-name="Email 2" id="email-2" maxlength="256" name="blue" required="required" type="text">
-      <input class="generate w-button" data-wait="Please wait..." type="submit" value="generate color palette">
+	    <label class="labels" for="red">enter an r value</label>
+	    <input class="text-field w-input" data-name="red" id="red" maxlength="256" name="red" type="text">
+	    <label class="labels" for="green">enter a g value</label>
+	    <input class="text-field w-input" data-name="Email" id="email" maxlength="256" name="green" required="required" type="text">
+	    <label class="labels" for="blue">enter a b value</label>
+	    <input class="text-field w-input" data-name="Email 2" id="email-2" maxlength="256" name="blue" required="required" type="text">
+	    <input class="generate w-button" data-wait="Please wait..." type="submit" value="generate color palette">
     </form>
   </div>
   <div class="w-container">
@@ -20,5 +19,27 @@
     <div class="color3"></div>
     <div class="color4"></div>
   </div>
+	<body>
+	<p id = "demo"> </p>
+		<script>
+			function color(r, g, b)
+			{
+				this.red = r;
+				this.green = g;
+				this.blue = b;
+			}
+			var samplecolor = new color(255, 255, 255);
+			function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
+			function toHex(n) {
+				 n = parseInt(n,10);
+				 if (isNaN(n)) return "00";
+				 n = Math.max(0,Math.min(n,255));
+				 return "0123456789ABCDEF".charAt((n-n%16)/16)
+				      + "0123456789ABCDEF".charAt(n%16);
+			}
+			document.getElementById("demo").innerHTML = "#" + rgbToHex(122, 122, 122);
+			document.body.style.background = "#" + rgbToHex(122, 122, 122);
+			
+		</script>
 	</body>
 </html>
