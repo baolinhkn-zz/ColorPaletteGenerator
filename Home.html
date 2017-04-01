@@ -77,11 +77,17 @@
 
 			function Color1()
 			{
-				alert("hi");
 				chosen = 0;
 				for (i = 0; i < 4; i++)
 				{
 					generateColors(chosen, i);
+				}
+				for (j = 0; j < 4; j++)
+				{
+					while (newColors[j].hex == "#FFFFFF" || newColors[j].hex == "#000000")
+					{	
+						generateColors(chosen, j);
+					}
 				}
 				document.getElementById("color_1").style.background = newColors[0].hex;
 				document.getElementById("color_2").style.background = newColors[1].hex;
@@ -94,14 +100,51 @@
 			}
 			function Color2()
 			{
-				alert("2");
 				chosen = 1;
+				for (i = 0; i < 4; i++)
+				{
+					generateColors(chosen, i);
+				}
+				for (j = 0; j < 4; j++)
+				{
+					while (newColors[j].hex == "#FFFFFF" || newColors[j].hex == "#000000")
+					{	
+						generateColors(chosen, j);
+					}
+				}
+				document.getElementById("color_1").style.background = newColors[0].hex;
+				document.getElementById("color_2").style.background = newColors[1].hex;
+				document.getElementById("color_3").style.background = newColors[2].hex;
+				document.getElementById("color_4").style.background = newColors[3].hex;
+				document.getElementById("new-hover-content").innerHTML = newColors[0].hex;
+				document.getElementById("new-hover-content2").innerHTML = newColors[1].hex;
+				document.getElementById("new-hover-content3").innerHTML = newColors[2].hex;
+				document.getElementById("new-hover-content4").innerHTML = newColors[3].hex;
 			}
 			function Color3()
 			{
-				alert("3");
 				chosen = 2;
+				for (i = 0; i < 4; i++)
+				{
+					generateColors(chosen, i);
+				}
+				for (j = 0; j < 4; j++)
+				{
+					while (newColors[j].hex == "#FFFFFF" || newColors[j].hex == "#000000")
+					{	
+						generateColors(chosen, j);
+					}
+				}
+				document.getElementById("color_1").style.background = newColors[0].hex;
+				document.getElementById("color_2").style.background = newColors[1].hex;
+				document.getElementById("color_3").style.background = newColors[2].hex;
+				document.getElementById("color_4").style.background = newColors[3].hex;
+				document.getElementById("new-hover-content").innerHTML = newColors[0].hex;
+				document.getElementById("new-hover-content2").innerHTML = newColors[1].hex;
+				document.getElementById("new-hover-content3").innerHTML = newColors[2].hex;
+				document.getElementById("new-hover-content4").innerHTML = newColors[3].hex;
 			}
+
 			function generateColors(choice, k)
 			{
 				var value = (colors[choice].red + colors[choice].green + colors[choice].blue)/3;
