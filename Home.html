@@ -1,57 +1,34 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css">
 	</head>
-
-	<div class="w-form">
-    <form class="w-clearfix" data-name="Color Form" id="color-form" name="color-form" onsubmit = "return validateForm()">
-	    <label class="labels" for="red">enter an r value</label>
-	    <input class="text-field w-input" data-name="red" id="red" maxlength="256" name="red" type="value">
-	    <label class="labels" for="green">enter a g value</label>
-	    <input class="text-field w-input" data-name="green" id="green" maxlength="256" name="green" required="required" type="value">
-	    <label class="labels" for="blue">enter a b value</label>
-	    <input class="text-field w-input" data-name="blue" id="blue" maxlength="256" name="blue" required="required" type="value">
-	    <input class="generate w-button" data-wait="Please wait..." type="button" value="generate color palette" onclick = "testForm(this.form)">
-    </form>
-  	</div>
+	<body>
 
 	<div class="w-container">
-	   <div class="color1"></div>
-	   <div class="color2"></div>
-	   <div class="color3"></div>
-	   <div class="color4"></div>
-	</div>
+	 <h1>Choose a color:</h1>
+	 <div class="original1" id="original_1"></div>
+	 <div class="original2" id="original_2"></div>
+	 <div class="original3" id="original_3"></div>
+ </div>
+ <div class="w-container">
+	 <div class="color1"></div>
+	 <div class="color2"></div>
+	 <div class="color3"></div>
+	 <div class="color4"></div>
+ </div>
 
-	<body>
 	<p id = "demo"> </p>
 		<script>
-			var red;
-			var green;
-			var blue;
-			var Hex;
-			function testForm(form)
-			{
-				alert("hi");
-				red = form.red.value;
-				green = form.green.value;
-				blue = form.blue.value;
-				alert(red + green + blue);				//alert("Hi");
-				//
-				//document.getElementById("demo").innerHTML = "#" + rgbToHex(red, green, blue);
-				//return "#" + rgbToHex(red, green, blue));
 
-			}
-			alert(red + green + blue);
-			document.body.style.background = "#" + rgbtoHex(red, green, blue);
 			function color(r, g, b)
 			{
 				this.red = r;
 				this.green = g;
 				this.blue = b;
 			}
-			var samplecolor = new color(255, 255, 255);
+
 			function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
+
 			function toHex(n) {
 				 n = parseInt(n,10);
 				 if (isNaN(n)) return "00";
@@ -59,8 +36,20 @@
 				 return "0123456789ABCDEF".charAt((n-n%16)/16)
 				      + "0123456789ABCDEF".charAt(n%16);
 			}
-			//document.body.style.background = "#" + rgbToHex(122, 122, 122);
-			
+
+
+			var randColor = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
+			var randColor2 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
+			var randColor3 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
+			var randColor4 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
+
+			var color1 = "#" + rgbToHex(randColor.red, randColor.green, randColor.blue);
+			document.getElementById("original_1").style.background = color1;
+			var color2 = "#" + rgbToHex(randColor2.red, randColor2.green, randColor2.blue);
+			document.getElementById("original_2").style.background = color2;
+			var color3 = "#" + rgbToHex(randColor3.red, randColor3.green, randColor3.blue);
+			document.getElementById("original_3").style.background = color3;
+
 		</script>
 	</body>
 </html>
