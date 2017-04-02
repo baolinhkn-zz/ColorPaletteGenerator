@@ -53,12 +53,13 @@ body {
   clear:left;
 }
 
-.color2, .color3, .color4 {
+.color2, .color3, .color4, .color5 {
   width: 200px;
   height: 200px;
   margin-top: 16px;
   margin-right: 5px;
   float: left;
+  clear: none;
 }
 
 .div-block {
@@ -102,7 +103,8 @@ body {
   float: left;
 }
 
-#hover-content, #hover-content2, #hover-content3, #new-hover-content, #new-hover-content2, #new-hover-content3, #new-hover-content4 {
+#hover-content, #hover-content2, #hover-content3, #new-hover-content, #new-hover-content2, #new-hover-content3,
+#new-hover-content4, #new-hover-content5 {
     letter-spacing: 0px;
     display: none;
 }
