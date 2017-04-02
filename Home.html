@@ -35,9 +35,6 @@
 		 <div class="color4" id = "color_4">
 			 <div id="new-hover-content4">
 			 </div>
-		 <div class="color5" id = "color_5">
-			 <div id="new-hover-content5">
-			 </div>
 		</div>
 		 </div>
 	 </div>
@@ -152,27 +149,22 @@
 
 			function setColors(j)
 			{
-				generateLighterColor(colors[j], 0);
-				document.getElementById("color_1").style.background = colors[j].hex;
-				document.getElementById("new-hover-content").innerHTML = colors[j].hex
-				document.getElementById("new-hover-content").style.color = textcolors[0].hex;
-
-				document.getElementById("color_2").style.background = newColors[0].hex;
-				document.getElementById("color_3").style.background = newColors[1].hex;
-				document.getElementById("color_4").style.background = newColors[2].hex;
-				document.getElementById("color_5").style.background = newColors[3].hex;
-				document.getElementById("new-hover-content2").innerHTML = newColors[0].hex;
-				document.getElementById("new-hover-content3").innerHTML = newColors[1].hex;
-				document.getElementById("new-hover-content4").innerHTML = newColors[2].hex;
-				document.getElementById("new-hover-content5").innerHTML = newColors[3].hex;
+				document.getElementById("color_1").style.background = newColors[0].hex;
+				document.getElementById("color_2").style.background = newColors[1].hex;
+				document.getElementById("color_3").style.background = newColors[2].hex;
+				document.getElementById("color_4").style.background = newColors[3].hex;
+				document.getElementById("new-hover-content").innerHTML = newColors[0].hex;
+				document.getElementById("new-hover-content2").innerHTML = newColors[1].hex;
+				document.getElementById("new-hover-content3").innerHTML = newColors[2].hex;
+				document.getElementById("new-hover-content4").innerHTML = newColors[3].hex;
 				for (i = 0; i < 4; i++)
 				{
 					generateLighterColor(newColors[i], i);
 				}
-				document.getElementById("new-hover-content2").style.color = textcolors[0].hex;
-				document.getElementById("new-hover-content3").style.color = textcolors[1].hex;
-				document.getElementById("new-hover-content4").style.color = textcolors[2].hex;
-				document.getElementById("new-hover-content5").style.color = textcolors[3].hex;
+				document.getElementById("new-hover-content").style.color = textcolors[0].hex;
+				document.getElementById("new-hover-content2").style.color = textcolors[1].hex;
+				document.getElementById("new-hover-content3").style.color = textcolors[2].hex;
+				document.getElementById("new-hover-content4").style.color = textcolors[3].hex;
 			}
 			function generateColors(choice, k)
 			{
