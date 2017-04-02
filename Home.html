@@ -62,27 +62,37 @@
 			var randColor1 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
 			var randColor2 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
 			var randColor3 = new color(Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256));
+
+			var colors = [randColor1, randColor2, randColor3];
+			var textcolors  = [];
+			var newColors = [];
+			var chosen;
+
+			for (i = 0; i < 3; i++)
+			{
+				generateLighterColor(colors[i], i);
+			}
+
 			var color1 = "#" + rgbToHex(randColor1.red, randColor1.green, randColor1.blue);
 			document.getElementById("original_1").style.background = color1;
 			document.getElementById("hover-content").innerHTML = color1;
+			document.getElementById("hover-content").style.color = textcolors[0].hex;
 			var color2 = "#" + rgbToHex(randColor2.red, randColor2.green, randColor2.blue);
 			document.getElementById("original_2").style.background = color2;
 			document.getElementById("hover-content2").innerHTML = color2;
+			document.getElementById("hover-content2").style.color = textcolors[1].hex;
 			var color3 = "#" + rgbToHex(randColor3.red, randColor3.green, randColor3.blue);
 			document.getElementById("original_3").style.background = color3;
 			document.getElementById("hover-content3").innerHTML = color3;
-			var colors = [randColor1, randColor2, randColor3];
-			var chosen;
+			document.getElementById("hover-content3").style.color = textcolors[2].hex;
+
 			document.getElementById("original_1").addEventListener("click", Color1);
 			document.getElementById("original_2").addEventListener("click", Color2);
 			document.getElementById("original_3").addEventListener("click", Color3);
-			var newColors = [];
 
 			function Color1()
 			{
 				chosen = 0;
-				document.getElementById("color_1").style.background = colors[0].hex;
-				document.getElementById("new-hover-content").innerHTML = colors[0].hex;
 				for (i = 0; i < 4; i++)
 				{
 					generateColors(chosen, i);
@@ -90,24 +100,15 @@
 				for (j = 0; j < 4; j++)
 				{
 					while (newColors[j].hex == "#FFFFFF" || newColors[j].hex == "#000000")
-					{
+					{	
 						generateColors(chosen, j);
 					}
 				}
-				document.getElementById("color_2").style.background = newColors[0].hex;
-				document.getElementById("color_3").style.background = newColors[1].hex;
-				document.getElementById("color_4").style.background = newColors[2].hex;
-				document.getElementById("color_5").style.background = newColors[3].hex;
-				document.getElementById("new-hover-content2").innerHTML = newColors[0].hex;
-				document.getElementById("new-hover-content3").innerHTML = newColors[1].hex;
-				document.getElementById("new-hover-content4").innerHTML = newColors[2].hex;
-				document.getElementById("new-hover-content5").innerHTML = newColors[3].hex;
+				setColors(chosen)
 			}
 			function Color2()
 			{
 				chosen = 1;
-				document.getElementById("color_1").style.background = colors[1].hex;
-				document.getElementById("new-hover-content").innerHTML = colors[1].hex;
 				for (i = 0; i < 4; i++)
 				{
 					generateColors(chosen, i);
@@ -115,24 +116,15 @@
 				for (j = 0; j < 4; j++)
 				{
 					while (newColors[j].hex == "#FFFFFF" || newColors[j].hex == "#000000")
-					{
+					{	
 						generateColors(chosen, j);
 					}
 				}
-				document.getElementById("color_2").style.background = newColors[0].hex;
-				document.getElementById("color_3").style.background = newColors[1].hex;
-				document.getElementById("color_4").style.background = newColors[2].hex;
-				document.getElementById("color_5").style.background = newColors[3].hex;
-				document.getElementById("new-hover-content2").innerHTML = newColors[0].hex;
-				document.getElementById("new-hover-content3").innerHTML = newColors[1].hex;
-				document.getElementById("new-hover-content4").innerHTML = newColors[2].hex;
-				document.getElementById("new-hover-content5").innerHTML = newColors[3].hex;
+				setColors(chosen)
 			}
 			function Color3()
 			{
 				chosen = 2;
-				document.getElementById("color_1").style.background = colors[2].hex;
-				document.getElementById("new-hover-content").innerHTML = colors[2].hex;
 				for (i = 0; i < 4; i++)
 				{
 					generateColors(chosen, i);
@@ -140,10 +132,31 @@
 				for (j = 0; j < 4; j++)
 				{
 					while (newColors[j].hex == "#FFFFFF" || newColors[j].hex == "#000000")
-					{
+					{	
 						generateColors(chosen, j);
 					}
 				}
+				setColors(chosen)
+			}
+			
+			var white = new color(255, 255, 255);
+
+			function generateLighterColor(c, k)
+			{
+				var red = (c.red + 255)	/ 2;
+				var green = (c.green + 255) / 2;
+				var blue = (c.blue + 255) / 2;
+				var lc = new color(red, green, blue);
+				textcolors[k] = lc;
+			}
+
+			function setColors(j)
+			{
+				generateLighterColor(colors[j], 0);
+				document.getElementById("color_1").style.background = colors[j].hex;
+				document.getElementById("new-hover-content").innerHTML = colors[j].hex
+				document.getElementById("new-hover-content").style.color = textcolors[0].hex;
+
 				document.getElementById("color_2").style.background = newColors[0].hex;
 				document.getElementById("color_3").style.background = newColors[1].hex;
 				document.getElementById("color_4").style.background = newColors[2].hex;
@@ -152,13 +165,24 @@
 				document.getElementById("new-hover-content3").innerHTML = newColors[1].hex;
 				document.getElementById("new-hover-content4").innerHTML = newColors[2].hex;
 				document.getElementById("new-hover-content5").innerHTML = newColors[3].hex;
+				for (i = 0; i < 4; i++)
+				{
+					generateLighterColor(newColors[i], i);
+				}
+				document.getElementById("new-hover-content2").style.color = textcolors[0].hex;
+				document.getElementById("new-hover-content3").style.color = textcolors[1].hex;
+				document.getElementById("new-hover-content4").style.color = textcolors[2].hex;
+				document.getElementById("new-hover-content5").style.color = textcolors[3].hex;
 			}
-
-			var white = new color(255, 255, 255);
-			var temp = new color(colors[choice].red, colors[choice].green, colors[choice].blue);
-
 			function generateColors(choice, k)
 			{
+				/*
+				var value = (colors[choice].red + colors[choice].green + colors[choice].blue)/3;
+				var offset = Math.random() * 200;
+				var newValue = value + 	2*Math.random()*offset - offset;
+				var valueRatio = newValue/value;
+				var newColor = new color(colors[choice].red*valueRatio, colors[choice].green * valueRatio, colors[choice].blue*valueRatio);
+				*/
 				var r = Math.random()*256;
 				var g = Math.random()*256;
 				var b = Math.random()*256;
@@ -169,26 +193,12 @@
 				var pastel = true;
 				if (pastel) {
 					r = (r + white.red)/2;
-					alert(r);
 					g = (g + white.green)/2;
 					b = (b + white.blue)/2;
-					var newColor = new color(r, g, b);
-					newColors[k] = newColor;
-					if (k == 3) {
-						done = true;
-					}
 				}
 
-				/*
-				if (done) {
-					var pastelRed = (temp.red + white.red)/2;
-					var pastelGreen = (temp.green + white.green)/2;
-					var pastelBlue = (temp.blue + white.blue)/2;
-					var pastelVersion = new color(pastelRed, pastelGreen, pastelBlue);
-					newColors[4] = pastelVersion;
-					document.getElementById("color_5").style.background = newColors[4].hex;
-				}
-				*/
+				var newColor = new color(r, g, b);
+				newColors[k] = newColor;
 			}
 		</script>
 	</body>
