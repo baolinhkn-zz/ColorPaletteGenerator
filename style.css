@@ -101,6 +101,7 @@ body {
   margin-left: 7px;
   padding-left: 0px;
   float: left;
+  margin-right: 7px
 }
 
 #hover-content, #hover-content2, #hover-content3, #new-hover-content, #new-hover-content2, #new-hover-content3,
@@ -115,68 +116,11 @@ body {
 {
     display: block;
 }
-/*
-.dropbtn {
-    width: 160px;
-    font-size: 20px;
-    background-color: #fff;
-    color: #000;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-family: Helvetica;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    text-align: cetner;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #fff;
-}
-
-.dropdown {
-    margin-left: 15px;
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 158px;
-    text-align: center;
-    border: 1px solid #000;
-    border-top: none;
-    border-bottom: none;
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    border-bottom: 1px solid #000;
-    color: black;
-    padding: 5px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.show {
-  display:block;
-}
-*/
+/
 
 select {
   border: 1px solid #fff;
+
 }
 
 #mySelect {
